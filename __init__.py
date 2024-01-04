@@ -1,5 +1,6 @@
 import blade.recv_api
 import blade.recv_normal
+import blade.recv_tushare
 
 __all__ = ['CreateRecvMessage']
 
