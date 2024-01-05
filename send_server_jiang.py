@@ -7,7 +7,7 @@ import urllib.request
 class SendServerJiang(SendMsg):
     def __init__(self, args): pass
     def Initialization(self) -> bool: pass
-    def Send(self, msg): 
+    def Send(self, msg):
         postdata = urllib.parse.urlencode({'text': msg['head'], 'desp': msg['body']}).encode('utf-8')
         url = f'https://sctapi.ftqq.com/SCT224501TFIQqolnYZ1oDi3DNv1dLgGvu.send'
         req = urllib.request.Request(url, data=postdata, method='POST')
