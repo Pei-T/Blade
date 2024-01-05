@@ -1,4 +1,4 @@
-from blade.recv_api import RecvMsg, recv_factory
+from blade.api_recv import RecvMsg, factory_recv
 import tushare as ts
 import time
 
@@ -21,5 +21,5 @@ class RecvTushareOnlien(RecvMsg):
         pass
 
 
-recv_factory['tushare_online'] = RecvTushareOnlien
+factory_recv['tushare_online'] = RecvTushareOnlien
 

@@ -1,6 +1,6 @@
 # package
 import zmq
-from blade.recv_api import RecvMsg, recv_factory
+from blade.api_recv import RecvMsg, factory_recv
 
 
 context = zmq.Context()
@@ -26,7 +26,7 @@ class RecvZmq(RecvMsg):
         self.socket.close()
 
 
-recv_factory['zmq'] = RecvZmq
+factory_recv['zmq'] = RecvZmq
 
 
 class RecvInput(RecvMsg):
@@ -41,4 +41,4 @@ class RecvInput(RecvMsg):
         return data.encode('utf-8')
 
 
-recv_factory['input'] = RecvInput
+factory_recv['input'] = RecvInput

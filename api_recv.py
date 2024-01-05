@@ -1,4 +1,4 @@
-recv_factory = {}
+factory_recv = {}
 
 
 class RecvMsg:
@@ -8,7 +8,5 @@ class RecvMsg:
 
 
 def CreateRecv(type, args):
-    res = recv_factory[type](args)
-    if res.Initialization() == True:
-        return res
-    return None
+    res = factory_recv[type](args)
+    return res
