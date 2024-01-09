@@ -4,6 +4,8 @@ import blade.recv_normal
 import blade.recv_tushare
 import blade.send_normal
 import blade.send_server_jiang
+import blade.send_matplot
+
 __all__ = ['CreateRecvMessage']
 
 def CreateRecvMessage(type, args):
