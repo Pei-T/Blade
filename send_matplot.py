@@ -8,6 +8,8 @@ class SendMatplot(SendMsg):
         self.x_lable = args[1]
         self.y_lable = args[2]
         self.path = args[3]
+        self.last_x=0
+        self.last_y=0
 
     def Initialization(self) -> bool:
         self.fig, self.axes = plt.subplots()
@@ -16,7 +18,10 @@ class SendMatplot(SendMsg):
         self.axes.set_ylabel(self.y_lable)
 
     def Send(self, msg):
-        self.axes.plot(msg['x'], msg['y'])
+        if not (self.last_x == 0 and self.last_y == 0):
+            self.axes.plot([self.last_x, msg['x']], [self.last_y, msg['y']] ,c='black')
+        self.last_x = msg['x']
+        self.last_y = msg['y']
         self.axes.scatter(msg['p_x'], msg['p_y'], c=msg['p_c'])
         self.fig.savefig(self.path+'/'+self.title)
 

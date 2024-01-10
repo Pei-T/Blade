@@ -13,7 +13,7 @@ class RecvTushareOnlien(RecvMsg):
         return True
 
     def Recv(self) -> bytes:
-        time.sleep(1)
+        time.sleep(0.5)
         res = ts.get_realtime_quotes(self.code)
         return res.loc[0]
 
